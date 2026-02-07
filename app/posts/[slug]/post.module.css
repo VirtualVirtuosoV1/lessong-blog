@@ -1,7 +1,7 @@
 .main {
   min-height: 100vh;
-  background: #0f172a;
-  color: #e5e7eb;
+  background: #1E1E2E; /* dark blue-ish */
+  color: #CDD6F4;      /* light grey */
 }
 
 .article {

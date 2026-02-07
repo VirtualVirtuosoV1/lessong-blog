@@ -12,8 +12,8 @@ export default function BlogsPage() {
           <nav className={styles.nav}>
             <Link href="/">Home</Link>
             <Link href="/blogs">Blogs</Link>
-            <a href="/about">About</a>
-            <a href="#">Contact</a>
+            <Link href="/about">About</Link>
+            <Link href="/contact">Contact</Link>
           </nav>
 
           <h1 className={styles.title}>All blog posts</h1>

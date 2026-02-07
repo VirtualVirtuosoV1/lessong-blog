@@ -14,11 +14,13 @@ export default function BlogsPage() {
             <Link href="/contact">Contact</Link>
           </nav>
 
-          <h1 className={styles.title}>About</h1>
+          <h1 className={styles.title}>Contact</h1>
 
           <p className={styles.introText}>
-            Here I say a few things about myself. Blah blah blah.
-            
+            Harry Potter <br></br>
+            4 Privet Drive <br></br>
+            +1-555-012-3456 <br></br>
+            albusdumbledore@hogwarts.owl <br></br>
           </p>
         </header>
 
