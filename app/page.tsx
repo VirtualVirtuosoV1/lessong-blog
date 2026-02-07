@@ -11,7 +11,6 @@ export default function Home() {
 
         <header className={styles.header}>
           <nav className={styles.nav}>
-            <Link href="/" className={styles.logo}>HoggyWarts</Link>
             <Link href="/">Home</Link>
             <Link href="/blogs">Blogs</Link>
             <Link href="/about">About</Link>
