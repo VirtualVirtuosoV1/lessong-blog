@@ -24,7 +24,7 @@ export default async function PostPage({ params }: PostPageProps) {
     <main className={styles.main}>
       <article className={styles.article}>
         <a href="/" className={styles.backLink}>
-          ← back home
+          back home
         </a>
 
         <h1 className={styles.title}>{post.title}</h1>

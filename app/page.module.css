@@ -2,8 +2,8 @@
 
 .main {
   min-height: 100vh;
-  background: #1E1E2E; /* dark blue-ish */
-  color: #CDD6F4;      /* light grey */
+  background: #21262d; /* The main pages background */
+  color: #ecf2f8;      /* The main pages text-color */
 }
 
 .logo {
@@ -64,11 +64,11 @@
   margin: 0;
 }
 
-.postItem {
+.postItem { /* Homepage card */
   margin-bottom: 0.75rem;
   padding: 0.75rem 1rem;
   border-radius: 0.75rem;
-  background: #313244;         /* lighter card */
+  background: #161b22;
   /* border: 1px solid #1e293b; */
 }
 
@@ -78,8 +78,8 @@
   text-underline-offset: 4px;
 }
 
-.postMeta {
+.postMeta { /* Homepage card subtitle */
   margin-top: 0.25rem;
   font-size: 0.75rem;
-  color: #94a3b8;
+  color: #a2d2fb;
 }

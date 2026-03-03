@@ -11,16 +11,15 @@ export default function BlogsPage() {
         <header className={styles.header}>
           <nav className={styles.nav}>
             <Link href="/">Home</Link>
-            <Link href="/blogs">Blogs</Link>
+            <Link href="/lessons">Lessons</Link>
             <Link href="/about">About</Link>
             <Link href="/contact">Contact</Link>
           </nav>
 
-          <h1 className={styles.title}>All blog posts</h1>
+          <h1 className={styles.title}>All lesson posts</h1>
 
           <p className={styles.introText}>
-            This is the full archive. Every questionable thought I&apos;ve ever
-            decided to publish lives here.
+            This is the full archive. Every questionable lesson's notes that I&apos;ve decided to publish lives here.
           </p>
         </header>
 

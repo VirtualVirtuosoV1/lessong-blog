@@ -9,7 +9,7 @@ export default function BlogsPage() {
         <header className={styles.header}>
           <nav className={styles.nav}>
             <Link href="/">Home</Link>
-            <Link href="/blogs">Blogs</Link>
+            <Link href="/lessons">Lessons</Link>
             <Link href="/about">About</Link>
             <Link href="/contact">Contact</Link>
           </nav>

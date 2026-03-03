@@ -2,7 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #1E1E2E;
+  --foreground: #21262d;
 }
 
 @theme inline {
@@ -14,7 +14,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #1E1E2E;
+    --background: #21262d; /* scrolling edge (also safari's tab bar)*/
     --foreground: #ededed;
   }
 }

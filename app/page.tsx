@@ -12,26 +12,23 @@ export default function Home() {
         <header className={styles.header}>
           <nav className={styles.nav}>
             <Link href="/">Home</Link>
-            <Link href="/blogs">Blogs</Link>
+            <Link href="/lessons">Lessons</Link>
             <Link href="/about">About</Link>
             <Link href="/contact">Contact</Link>
           </nav>
 
           <h1 className={styles.title}>
-            Welcome to my amazing (not really) blog!  
+            Uni blog
           </h1>
 
           <p className={styles.introText}>
-            I've no clue as to what are you doing here, unless you are lurking that is? <br></br>
-            Anyhow. This is not meant to be an actual blog, but some sort of a practice ground for me to test out my extraordinary programming skills. If you've read this far, I suppose you aren't the brightest person out there...<br></br>
-            I'll be blunt then.<br></br>
-            Please leave.
+            This is a blog page for some courses of the Computer Science department of the Aristotle University of Thessaloniki, Greece. 
           </p>
 
         </header>
 
         <section>
-          <h2 className={styles.sectionTitle}>Newest posts</h2>
+          <h2 className={styles.sectionTitle}>Latest posts</h2>
 
           <ul className={styles.postList}>
             {posts.map((post) => (
