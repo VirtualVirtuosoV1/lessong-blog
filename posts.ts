@@ -28,21 +28,19 @@ function getPostFileNames(): string[] {
 }
 
 function normalizeTags(rawTags: unknown): string[] {
-  if (Array.isArray(rawTags)) {
-    return rawTags
-      .filter((tag): tag is string => typeof tag === "string")
-      .map((tag) => tag.trim())
-      .filter(Boolean);
-  }
+  const normalizedTags = Array.isArray(rawTags)
+    ? rawTags
+        .filter((tag): tag is string => typeof tag === "string")
+        .map((tag) => tag.trim())
+        .filter(Boolean)
+    : typeof rawTags === "string"
+      ? rawTags
+          .split(",")
+          .map((tag) => tag.trim())
+          .filter(Boolean)
+      : [];
 
-  if (typeof rawTags === "string") {
-    return rawTags
-      .split(",")
-      .map((tag) => tag.trim())
-      .filter(Boolean);
-  }
-
-  return [];
+  return Array.from(new Set(normalizedTags));
 }
 
 // For the homepage list

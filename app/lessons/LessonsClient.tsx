@@ -6,6 +6,8 @@ import { formatPostDate } from "@/formatPostDate";
 import sharedStyles from "../page.module.css";
 import styles from "./lessons.module.css";
 
+const MAX_VISIBLE_FILTER_TAGS = 50;
+
 type LessonPost = {
   slug: string;
   title: string;
@@ -47,6 +49,7 @@ export default function LessonsClient({
 
     return tag.toLowerCase().includes(normalizedQuery);
   });
+  const visibleMatchingTags = matchingTags.slice(0, MAX_VISIBLE_FILTER_TAGS);
 
   function toggleTag(tag: string) {
     setSelectedTags((currentTags) =>
@@ -105,7 +108,7 @@ export default function LessonsClient({
 
             {matchingTags.length > 0 ? (
               <ul className={styles.tagPickerList}>
-                {matchingTags.map((tag) => (
+                {visibleMatchingTags.map((tag) => (
                   <li key={tag}>
                     <button
                       type="button"
@@ -122,6 +125,12 @@ export default function LessonsClient({
                 No more tags match your search.
               </p>
             )}
+
+            <div className={styles.filterPanelFooter}>
+              <span className={styles.tagCount}>
+                {visibleMatchingTags.length}/{matchingTags.length}
+              </span>
+            </div>
           </div>
         ) : null}
       </div>
@@ -137,7 +146,10 @@ export default function LessonsClient({
               </Link>
 
               {post.tags.length > 0 ? (
-                <ul className={sharedStyles.cardTagList} aria-label="Post tags">
+                <ul
+                  className={`${sharedStyles.cardTagList} ${styles.singleLineCardTagList}`}
+                  aria-label="Post tags"
+                >
                   {post.tags.map((tag) => (
                     <li key={`${post.slug}-${tag}`}>
                       <button

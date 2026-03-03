@@ -70,6 +70,28 @@
   margin: 0.9rem 0 0;
 }
 
+.filterPanelFooter {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.7rem;
+}
+
+.tagCount {
+  color: #7f90a5;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.singleLineCardTagList {
+  flex-wrap: nowrap;
+  max-height: none;
+  overflow: hidden;
+}
+
+.singleLineCardTagList > li {
+  flex: 0 0 auto;
+}
+
 .selectedTag {
   background: #123038;
   border-color: #46e6e6;
