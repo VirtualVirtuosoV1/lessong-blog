@@ -2,7 +2,10 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
-import html from "remark-html";
+import remarkMath from "remark-math";
+import remarkRehype from "remark-rehype";
+import rehypeKatex from "rehype-katex";
+import rehypeStringify from "rehype-stringify";
 
 const postsDirectory = path.join(process.cwd(), "content", "posts");
 
@@ -77,7 +80,10 @@ export function getPostBySlug(slug: string): Post | null {
   const matterResult = matter(fileContents);
 
   const processedContent = remark()
-    .use(html)
+    .use(remarkMath)
+    .use(remarkRehype)
+    .use(rehypeKatex)
+    .use(rehypeStringify)
     .processSync(matterResult.content);
 
   const contentHtml = processedContent.toString();

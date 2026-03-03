@@ -1,0 +1,93 @@
+.filterWrap {
+  margin-bottom: 1.5rem;
+}
+
+.filterBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.filterTrigger {
+  appearance: none;
+  border: 1px solid #314158;
+  border-radius: 999px;
+  background: #0f141b;
+  color: #ecf2f8;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.88rem;
+  padding: 0.45rem 0.9rem;
+  transition: border-color 150ms ease, color 150ms ease,
+    background-color 150ms ease;
+}
+
+.filterTrigger:hover,
+.filterTriggerActive {
+  border-color: #46e6e6;
+  color: #46e6e6;
+}
+
+.filterTrigger:focus-visible {
+  outline: 2px solid #46e6e6;
+  outline-offset: 2px;
+}
+
+.filterPanel {
+  margin-top: 0.9rem;
+  padding: 0.9rem 1rem 1rem;
+  border: 1px solid #263241;
+  border-radius: 1rem;
+  background: #121820;
+}
+
+.searchInput {
+  width: 100%;
+  border: 1px solid #314158;
+  border-radius: 0.85rem;
+  background: #0b0f14;
+  color: #ecf2f8;
+  font: inherit;
+  padding: 0.65rem 0.8rem;
+}
+
+.searchInput::placeholder {
+  color: #7f90a5;
+}
+
+.searchInput:focus {
+  outline: 2px solid #46e6e6;
+  outline-offset: 2px;
+}
+
+.tagPickerList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0.9rem 0 0;
+}
+
+.selectedTag {
+  background: #123038;
+  border-color: #46e6e6;
+  color: #7cf5f5;
+}
+
+.selectedTagDismiss {
+  font-size: 0.72rem;
+  opacity: 0.8;
+}
+
+.filterEmpty,
+.emptyState {
+  margin: 0.9rem 0 0;
+  color: #9ca3af;
+  font-size: 0.92rem;
+}
+
+.emptyState {
+  margin-top: 0;
+}

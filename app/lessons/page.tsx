@@ -1,9 +1,13 @@
 import Link from "next/link";
 import styles from "../page.module.css"; // reuse the homepage styles
 import { getAllPosts } from "@/posts";
+import LessonsClient from "./LessonsClient";
 
 export default function BlogsPage() {
   const posts = getAllPosts(); // all posts, already sorted by date desc
+  const allTags = Array.from(new Set(posts.flatMap((post) => post.tags))).sort(
+    (left, right) => left.localeCompare(right)
+  );
 
   return (
     <main className={styles.main}>
@@ -23,34 +27,7 @@ export default function BlogsPage() {
           </p>
         </header>
 
-        <section>
-          <h2 className={styles.sectionTitle}>Posts</h2>
-
-          <ul className={styles.postList}>
-            {posts.map((post) => (
-              <li key={post.slug} className={styles.postItem}>
-                <Link
-                  href={`/posts/${post.slug}`}
-                  className={styles.postLink}
-                >
-                  {post.title}
-                </Link>
-                {post.tags.length > 0 ? (
-                  <ul className={styles.cardTagList} aria-label="Post tags">
-                    {post.tags.map((tag) => (
-                      <li key={`${post.slug}-${tag}`} className={styles.cardTag}>
-                        {tag}
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
-                <div className={styles.postMeta}>
-                  ~ {new Date(post.date).toLocaleString()}
-                </div>
-              </li>
-            ))}
-          </ul>
-        </section>
+        <LessonsClient posts={posts} allTags={allTags} />
       </div>
     </main>
   );

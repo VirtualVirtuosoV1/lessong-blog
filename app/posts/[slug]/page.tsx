@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { formatPostDate } from "@/formatPostDate";
 import { getPostBySlug, getAllPosts } from "@/posts";
 import styles from "./post.module.css";
 
@@ -30,7 +31,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
         <h1 className={styles.title}>{post.title}</h1>
         <p className={styles.date}>
-          ~ {new Date(post.date).toLocaleString()}
+          ~ {formatPostDate(post.date)}
         </p>
 
         {post.tags.length > 0 ? (

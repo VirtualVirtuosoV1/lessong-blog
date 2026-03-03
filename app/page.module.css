@@ -90,17 +90,32 @@
 }
 
 .cardTag {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   max-width: 100%;
   padding: 0.32rem 0.72rem;
   border-radius: 999px;
   background: #0b0f14;
   border: 1px solid #2c3848;
   color: #46e6e6;
+  cursor: pointer;
+  font: inherit;
   font-size: 0.76rem;
   line-height: 1;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.cardTag:hover {
+  border-color: #46e6e6;
+}
+
+.cardTag:focus-visible {
+  outline: 2px solid #46e6e6;
+  outline-offset: 2px;
 }
 
 .postMeta { /* Homepage card subtitle */

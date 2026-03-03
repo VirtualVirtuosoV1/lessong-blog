@@ -1,6 +1,7 @@
 import styles from "./page.module.css";
 import Link from "next/link";
 import { getAllPosts  } from "@/posts";
+import { formatPostDate } from "@/formatPostDate";
 
 export default function Home() {
   const posts = getAllPosts().slice(0, 3);
@@ -37,7 +38,7 @@ export default function Home() {
                   {post.title}
                 </Link>
                 <div className={styles.postMeta}>
-                  ~ {new Date(post.date).toLocaleString()}
+                  ~ {formatPostDate(post.date)}
                 </div>
               </li>
             ))}
