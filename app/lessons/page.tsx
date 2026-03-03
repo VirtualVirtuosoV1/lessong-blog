@@ -19,7 +19,7 @@ export default function BlogsPage() {
           <h1 className={styles.title}>All lesson posts</h1>
 
           <p className={styles.introText}>
-            This is the full archive. Every questionable lesson's notes that I&apos;ve decided to publish lives here.
+            This is the full archive. Every questionable lesson&apos;s notes that I&apos;ve decided to publish lives here.
           </p>
         </header>
 
@@ -35,6 +35,15 @@ export default function BlogsPage() {
                 >
                   {post.title}
                 </Link>
+                {post.tags.length > 0 ? (
+                  <ul className={styles.cardTagList} aria-label="Post tags">
+                    {post.tags.map((tag) => (
+                      <li key={`${post.slug}-${tag}`} className={styles.cardTag}>
+                        {tag}
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
                 <div className={styles.postMeta}>
                   ~ {new Date(post.date).toLocaleString()}
                 </div>

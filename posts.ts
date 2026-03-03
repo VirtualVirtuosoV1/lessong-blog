@@ -10,6 +10,7 @@ export type PostMeta = {
   slug: string;
   title: string;
   date: string;
+  tags: string[];
 };
 
 export type Post = PostMeta & {
@@ -21,6 +22,24 @@ function getPostFileNames(): string[] {
     return [];
   }
   return fs.readdirSync(postsDirectory).filter((name) => name.endsWith(".md"));
+}
+
+function normalizeTags(rawTags: unknown): string[] {
+  if (Array.isArray(rawTags)) {
+    return rawTags
+      .filter((tag): tag is string => typeof tag === "string")
+      .map((tag) => tag.trim())
+      .filter(Boolean);
+  }
+
+  if (typeof rawTags === "string") {
+    return rawTags
+      .split(",")
+      .map((tag) => tag.trim())
+      .filter(Boolean);
+  }
+
+  return [];
 }
 
 // For the homepage list
@@ -38,6 +57,7 @@ export function getAllPosts(): PostMeta[] {
       slug,
       title: matterResult.data.title as string,
       date: matterResult.data.date as string,
+      tags: normalizeTags(matterResult.data.tags),
     };
   });
 
@@ -66,6 +86,7 @@ export function getPostBySlug(slug: string): Post | null {
     slug,
     title: matterResult.data.title as string,
     date: matterResult.data.date as string,
+    tags: normalizeTags(matterResult.data.tags),
     contentHtml,
   };
 }

@@ -78,8 +78,33 @@
   text-underline-offset: 4px;
 }
 
+.cardTagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0;
+  max-height: 4.2rem;
+  overflow: hidden;
+}
+
+.cardTag {
+  max-width: 100%;
+  padding: 0.32rem 0.72rem;
+  border-radius: 999px;
+  background: #0b0f14;
+  border: 1px solid #2c3848;
+  color: #46e6e6;
+  font-size: 0.76rem;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .postMeta { /* Homepage card subtitle */
-  margin-top: 0.25rem;
+  margin-top: 0.75rem;
   font-size: 0.75rem;
   color: #a2d2fb;
 }

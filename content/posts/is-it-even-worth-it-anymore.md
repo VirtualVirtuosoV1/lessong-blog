@@ -1,6 +1,7 @@
 ---
 title: "is it even worth it anymore? (◕‿◕)"
 date: "2026-01-26T02:24:00"
+tags: ["motivation", "notes", "student-life"]
 ---
 
 This is the **first fake post**.

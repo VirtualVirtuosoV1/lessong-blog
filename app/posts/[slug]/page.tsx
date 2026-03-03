@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getPostBySlug, getAllPosts } from "@/posts";
 import styles from "./post.module.css";
@@ -23,16 +24,25 @@ export default async function PostPage({ params }: PostPageProps) {
   return (
     <main className={styles.main}>
       <article className={styles.article}>
-        <a href="/" className={styles.backLink}>
+        <Link href="/" className={styles.backLink}>
           back home
-        </a>
+        </Link>
 
         <h1 className={styles.title}>{post.title}</h1>
         <p className={styles.date}>
           ~ {new Date(post.date).toLocaleString()}
         </p>
 
-        {/* Render Markdown as HTML */}
+        {post.tags.length > 0 ? (
+          <ul className={styles.tagList} aria-label="Post tags">
+            {post.tags.map((tag) => (
+              <li key={tag} className={styles.tag}>
+                {tag}
+              </li>
+            ))}
+          </ul>
+        ) : null}
+
         <div
           className={styles.content}
           dangerouslySetInnerHTML={{ __html: post.contentHtml }}
