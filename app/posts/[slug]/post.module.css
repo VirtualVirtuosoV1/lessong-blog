@@ -1,7 +1,8 @@
 .main {
   min-height: 100vh;
   background: #21262d; /* post background*/
-  color: #CDD6F4;      /* light grey */
+  /* background: hotpink !important;  */
+  color: #ecf2f8;      /* light grey */
 }
 
 .article {

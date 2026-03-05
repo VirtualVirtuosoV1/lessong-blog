@@ -1,8 +1,8 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { formatPostDate } from "@/formatPostDate";
 import { getPostBySlug, getAllPosts } from "@/posts";
 import styles from "./post.module.css";
+import PostBackLink from "./PostBackLink";
 
 type PostPageProps = {
   params: Promise<{ slug: string }>;
@@ -25,9 +25,7 @@ export default async function PostPage({ params }: PostPageProps) {
   return (
     <main className={styles.main}>
       <article className={styles.article}>
-        <Link href="/" className={styles.backLink}>
-          back home
-        </Link>
+        <PostBackLink className={styles.backLink} />
 
         <h1 className={styles.title}>{post.title}</h1>
         <p className={styles.date}>
