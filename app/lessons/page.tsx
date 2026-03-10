@@ -8,6 +8,14 @@ export default function BlogsPage() {
   const allTags = Array.from(new Set(posts.flatMap((post) => post.tags))).sort(
     (left, right) => left.localeCompare(right)
   );
+  const allLessons = Array.from(
+    new Set(
+      posts.flatMap((post) => {
+        const lessonLabel = post.lesson ?? post.lessonCode;
+        return lessonLabel ? [lessonLabel] : [];
+      })
+    )
+  ).sort((left, right) => left.localeCompare(right));
 
   return (
     <main className={styles.main}>
@@ -27,7 +35,7 @@ export default function BlogsPage() {
           </p>
         </header>
 
-        <LessonsClient posts={posts} allTags={allTags} />
+        <LessonsClient posts={posts} allTags={allTags} allLessons={allLessons} />
       </div>
     </main>
   );

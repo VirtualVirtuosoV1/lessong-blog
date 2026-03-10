@@ -13,6 +13,8 @@ export type PostMeta = {
   slug: string;
   title: string;
   date: string;
+  lesson?: string;
+  lessonCode?: string;
   tags: string[];
 };
 
@@ -43,6 +45,36 @@ function normalizeTags(rawTags: unknown): string[] {
   return Array.from(new Set(normalizedTags));
 }
 
+function normalizeOptionalText(rawValue: unknown): string | undefined {
+  if (typeof rawValue !== "string") {
+    return undefined;
+  }
+
+  const value = rawValue.trim();
+  return value.length > 0 ? value : undefined;
+}
+
+const LESSON_CODE_TAG_PATTERN = /^[A-Z]{2,5}-\d{2}-\d{2}$/;
+
+function splitLegacyLessonTag(tags: string[]): {
+  lessonCode?: string;
+  tags: string[];
+} {
+  if (tags.length === 0) {
+    return { tags };
+  }
+
+  const [firstTag, ...otherTags] = tags;
+  if (LESSON_CODE_TAG_PATTERN.test(firstTag)) {
+    return {
+      lessonCode: firstTag,
+      tags: otherTags,
+    };
+  }
+
+  return { tags };
+}
+
 // For the homepage list
 export function getAllPosts(): PostMeta[] {
   const fileNames = getPostFileNames();
@@ -53,12 +85,20 @@ export function getAllPosts(): PostMeta[] {
     const fileContents = fs.readFileSync(fullPath, "utf8");
 
     const matterResult = matter(fileContents);
+    const normalizedTags = normalizeTags(matterResult.data.tags);
+    const { lessonCode: legacyLessonCode, tags } =
+      splitLegacyLessonTag(normalizedTags);
+    const lesson = normalizeOptionalText(matterResult.data.lesson);
+    const lessonCode =
+      normalizeOptionalText(matterResult.data.lessonCode) ?? legacyLessonCode;
 
     return {
       slug,
       title: matterResult.data.title as string,
       date: matterResult.data.date as string,
-      tags: normalizeTags(matterResult.data.tags),
+      lesson,
+      lessonCode,
+      tags,
     };
   });
 
@@ -76,6 +116,12 @@ export function getPostBySlug(slug: string): Post | null {
 
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const matterResult = matter(fileContents);
+  const normalizedTags = normalizeTags(matterResult.data.tags);
+  const { lessonCode: legacyLessonCode, tags } =
+    splitLegacyLessonTag(normalizedTags);
+  const lesson = normalizeOptionalText(matterResult.data.lesson);
+  const lessonCode =
+    normalizeOptionalText(matterResult.data.lessonCode) ?? legacyLessonCode;
 
   const processedContent = remark()
     .use(remarkMath)
@@ -90,7 +136,9 @@ export function getPostBySlug(slug: string): Post | null {
     slug,
     title: matterResult.data.title as string,
     date: matterResult.data.date as string,
-    tags: normalizeTags(matterResult.data.tags),
+    lesson,
+    lessonCode,
+    tags,
     contentHtml,
   };
 }

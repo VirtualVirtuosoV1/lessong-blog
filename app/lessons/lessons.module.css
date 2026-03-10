@@ -36,10 +36,29 @@
 
 .filterPanel {
   margin-top: 0.9rem;
-  padding: 0.9rem 1rem 1rem;
+  padding: 0.9rem 1rem;
   border: 1px solid #263241;
   border-radius: 1rem;
   background: #121820;
+}
+
+.filterSection {
+  border: 1px solid #263241;
+  border-radius: 0.85rem;
+  background: #0d131a;
+  padding: 0.75rem;
+}
+
+.filterSection + .filterSection {
+  margin-top: 0.75rem;
+}
+
+.filterSectionTitle {
+  margin: 0 0 0.6rem;
+  color: #a2d2fb;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
 .searchInput {
@@ -67,7 +86,16 @@
   gap: 0.5rem;
   list-style: none;
   padding: 0;
-  margin: 0.9rem 0 0;
+  margin: 0.75rem 0 0;
+}
+
+.lessonPickerList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .filterPanelFooter {
@@ -92,10 +120,22 @@
   flex: 0 0 auto;
 }
 
+.lessonMeta {
+  margin: 0.6rem 0 0;
+  font-size: 0.8rem;
+  color: #a2d2fb;
+}
+
 .selectedTag {
   background: #123038;
   border-color: #46e6e6;
   color: #7cf5f5;
+}
+
+.selectedLesson {
+  background: #1d2940;
+  border-color: #7da6ff;
+  color: #bed2ff;
 }
 
 .selectedTagDismiss {

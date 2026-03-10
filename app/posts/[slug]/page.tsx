@@ -28,9 +28,9 @@ export default async function PostPage({ params }: PostPageProps) {
         <PostBackLink className={styles.backLink} />
 
         <h1 className={styles.title}>{post.title}</h1>
-        <p className={styles.date}>
-          ~ {formatPostDate(post.date)}
-        </p>
+        {post.lesson || post.lessonCode ? (
+          <p className={styles.lesson}>Lesson: {post.lesson ?? post.lessonCode}</p>
+        ) : null}
 
         {post.tags.length > 0 ? (
           <ul className={styles.tagList} aria-label="Post tags">
@@ -41,6 +41,10 @@ export default async function PostPage({ params }: PostPageProps) {
             ))}
           </ul>
         ) : null}
+
+        <p className={styles.date}>
+          ~ {formatPostDate(post.date)}
+        </p>
 
         <div
           className={styles.content}
