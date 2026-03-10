@@ -29,7 +29,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
         <h1 className={styles.title}>{post.title}</h1>
         {post.lesson || post.lessonCode ? (
-          <p className={styles.lesson}>Lesson: {post.lesson ?? post.lessonCode}</p>
+          <p className={styles.lesson}>{post.lesson ?? post.lessonCode}</p>
         ) : null}
 
         {post.tags.length > 0 ? (

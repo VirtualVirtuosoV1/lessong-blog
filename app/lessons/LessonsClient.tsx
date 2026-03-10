@@ -36,25 +36,27 @@ export default function LessonsClient({
 
   const normalizedQuery = tagQuery.trim().toLowerCase();
 
-  const filteredPosts = posts
-    .filter((post) => {
-      if (selectedLesson.length === 0) {
-        return true;
-      }
+  const lessonFilteredPosts = posts.filter((post) => {
+    if (selectedLesson.length === 0) {
+      return true;
+    }
 
-      const lessonLabel = post.lesson ?? post.lessonCode;
-      return lessonLabel === selectedLesson;
-    })
-    .filter((post) => {
-      if (selectedTags.length === 0) {
-        return true;
-      }
+    const lessonLabel = post.lesson ?? post.lessonCode;
+    return lessonLabel === selectedLesson;
+  });
 
-      return post.tags.some((tag) => selectedTags.includes(tag));
-    });
+  const filteredPosts = lessonFilteredPosts.filter((post) =>
+    selectedTags.every((tag) => post.tags.includes(tag))
+  );
+
+  const applicableTags = new Set(filteredPosts.flatMap((post) => post.tags));
 
   const matchingTags = allTags.filter((tag) => {
     if (selectedTags.includes(tag)) {
+      return false;
+    }
+
+    if (!applicableTags.has(tag)) {
       return false;
     }
 
@@ -175,7 +177,7 @@ export default function LessonsClient({
                 </ul>
               ) : (
                 <p className={styles.filterEmpty}>
-                  No more tags match your search.
+                  No more applicable tags match your search.
                 </p>
               )}
 
@@ -201,7 +203,7 @@ export default function LessonsClient({
 
               {post.lesson || post.lessonCode ? (
                 <p className={styles.lessonMeta}>
-                  Lesson: {post.lesson ?? post.lessonCode}
+                    {post.lesson ?? post.lessonCode}
                 </p>
               ) : null}
 
