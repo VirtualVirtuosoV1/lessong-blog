@@ -30,6 +30,12 @@ const assignments: Assignment[] = [
     title: "Επίλυση προβλήματος βαθιάς ενισχυτικής μάθησης",
     dueDate: "2026-05-23",
   },
+   {
+    id: "crypto-1",
+    course: "Θεμελειώσεις Κρυπτογραφίας",
+    title: "Πρώτο πρότζεκτ (2μ), όχι καθορισμένη Ημ.Παρ.",
+    dueDate: "2026-03-30",
+  },
 ];
 
 export function getDueAssignments(): Assignment[] {
