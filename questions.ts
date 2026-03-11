@@ -6,7 +6,7 @@ export type Question = {
 const questions: Question[] = [
   {
     id: "note-1",
-    text: "Remember to review k-NN decision boundaries before the next Machine Learning lecture.",
+    text: "Check on creating your own vpn.",
   },
   {
     id: "note-2",

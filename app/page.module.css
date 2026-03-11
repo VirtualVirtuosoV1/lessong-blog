@@ -61,23 +61,23 @@
 }
 
 .sectionTitle {
+  margin: 0 0 1rem;
   font-weight: 600;
-  margin-bottom: 1rem;
 }
 
 .questionsPanel {
   grid-column: 1;
   grid-row: 2;
-  background: #214838;
+  /* background: #214838; */
   border-radius: 0.8rem;
-  padding: 1.2rem 1rem;
+  padding: 0;
   min-height: 100%;
   position: sticky;
   top: 1.5rem;
 }
 
 .questionsTitle {
-  margin: 0 0 0.85rem;
+  margin: 0 0 1rem;
   font-weight: 600;
 }
 
@@ -99,7 +99,8 @@
 .questionItem {
   padding: 0.75rem;
   border-radius: 0.65rem;
-  background: rgba(8, 28, 20, 0.55);
+    /* background: rgba(8, 28, 20, 0.55); */
+  background: #214838;
 }
 
 .questionText {
@@ -183,16 +184,16 @@
 .assignmentsPanel {
   grid-column: 3;
   grid-row: 2;
-  background: #3a5368;
+  /* background: #3a5368; */
   border-radius: 0.8rem;
-  padding: 1.2rem 1rem;
+  padding: 0;
   min-height: 100%;
   position: sticky;
   top: 1.5rem;
 }
 
 .assignmentsTitle {
-  margin: 0 0 0.85rem;
+  margin: 0 0 1rem;
   font-weight: 600;
 }
 
@@ -207,7 +208,8 @@
 .assignmentItem {
   padding: 0.75rem;
   border-radius: 0.65rem;
-  background: rgba(11, 15, 20, 0.45);
+    background: #3a5368;
+  /* background: rgba(11, 15, 20, 0.45); */
 }
 
 .assignmentCourse {
