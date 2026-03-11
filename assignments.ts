@@ -5,6 +5,8 @@ export type Assignment = {
   dueDate: string;
 };
 
+const MILLISECONDS_PER_DAY = 24 * 60 * 60 * 1000;
+
 const assignments: Assignment[] = [
   {
     id: "ml-assignment-1",
@@ -40,4 +42,32 @@ const assignments: Assignment[] = [
 
 export function getDueAssignments(): Assignment[] {
   return [...assignments].sort((a, b) => (a.dueDate > b.dueDate ? 1 : -1));
+}
+
+export function formatDaysLeft(dueDate: string, now: Date = new Date()): string {
+  const match = dueDate.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!match) {
+    return "";
+  }
+
+  const [, year, month, day] = match;
+  const dueDayNumber = Math.floor(
+    Date.UTC(Number(year), Number(month) - 1, Number(day)) / MILLISECONDS_PER_DAY
+  );
+  const todayDayNumber = Math.floor(
+    Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) / MILLISECONDS_PER_DAY
+  );
+
+  const daysLeft = dueDayNumber - todayDayNumber;
+
+  if (daysLeft > 0) {
+    return `(${daysLeft} ${daysLeft === 1 ? "day" : "days"} left)`;
+  }
+
+  if (daysLeft === 0) {
+    return "(due today)";
+  }
+
+  const overdueDays = Math.abs(daysLeft);
+  return `(${overdueDays} ${overdueDays === 1 ? "day" : "days"} overdue)`;
 }

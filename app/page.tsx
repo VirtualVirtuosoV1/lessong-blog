@@ -2,7 +2,7 @@ import styles from "./page.module.css";
 import Link from "next/link";
 import { getAllPosts } from "@/posts";
 import { formatPostDate } from "@/formatPostDate";
-import { getDueAssignments } from "@/assignments";
+import { formatDaysLeft, getDueAssignments } from "@/assignments";
 import { getLatestQuestions } from "@/questions";
 
 export default function Home() {
@@ -72,7 +72,8 @@ export default function Home() {
                 <p className={styles.assignmentCourse}>{assignment.course}</p>
                 <p className={styles.assignmentName}>{assignment.title}</p>
                 <p className={styles.assignmentDue}>
-                  Due: {formatPostDate(assignment.dueDate)}
+                  Due: {formatPostDate(assignment.dueDate)}{" "}
+                  {formatDaysLeft(assignment.dueDate)}
                 </p>
               </li>
             ))}
