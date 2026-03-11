@@ -10,7 +10,7 @@ const assignments: Assignment[] = [
     id: "ml-assignment-1",
     course: "Μηχανική Μάθηση",
     title: "First assignment",
-    dueDate: "2026-??-??",
+    dueDate: "2026-03-30",
   },
   {
     id: "eas-assignment-2",
@@ -21,14 +21,14 @@ const assignments: Assignment[] = [
   {
     id: "pattern-recognition-assignment-1",
     course: "Αναγνώριση Προτύπων - Στατιστική Μάθηση",
-    title: "1η Εργασία",
-    dueDate: "2026-??-??",
+    title: "k-nn classifier & nearest centroid classifier",
+    dueDate: "2026-03-29",
   },
   {
     id: "reinforcement-learning-assignment-1",
     course: "Υπολογιστική Νοημοσύνη – Βαθιά Ενισχυτική Μάθηση",
-    title: "1η Εργασία",
-    dueDate: "2026-??-??",
+    title: "Επίλυση προβλήματος βαθιάς ενισχυτικής μάθησης",
+    dueDate: "2026-05-23",
   },
 ];
 

@@ -143,6 +143,31 @@
   color: #46e6e6;
 }
 
+.loadAllLink {
+  appearance: none;
+  border: 1px solid #314158;
+  border-radius: 999px;
+  background: #0f141b;
+  color: #ecf2f8;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.88rem;
+  padding: 0.45rem 0.9rem;
+  text-decoration: none;
+  transition: border-color 150ms ease, color 150ms ease,
+    background-color 150ms ease;
+}
+
+.loadAllLink:hover {
+  border-color: #46e6e6;
+  color: #46e6e6;
+}
+
+.loadAllLink:focus-visible {
+  outline: 2px solid #46e6e6;
+  outline-offset: 2px;
+}
+
 .filterTrigger:focus-visible {
   outline: 2px solid #46e6e6;
   outline-offset: 2px;

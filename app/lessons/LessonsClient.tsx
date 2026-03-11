@@ -91,6 +91,19 @@ export default function LessonsClient({
     setTagQuery("");
   }
 
+  const loadAllSearchParams = new URLSearchParams();
+  if (selectedLesson.length > 0) {
+    loadAllSearchParams.set("lesson", selectedLesson);
+  }
+  selectedTags.forEach((tag) => {
+    loadAllSearchParams.append("tag", tag);
+  });
+  const loadAllQuery = loadAllSearchParams.toString();
+  const loadAllHref =
+    loadAllQuery.length > 0
+      ? `/lessons/load-all?${loadAllQuery}`
+      : "/lessons/load-all";
+
   return (
     <section>
       <div className={styles.filterWrap}>
@@ -106,6 +119,12 @@ export default function LessonsClient({
           >
             Filter tags
           </button>
+
+          {filteredPosts.length > 0 ? (
+            <Link href={loadAllHref} className={styles.loadAllLink}>
+              Load all ({filteredPosts.length})
+            </Link>
+          ) : null}
 
           {selectedLesson ? (
             <button
