@@ -1,18 +1,17 @@
 To-do
-- Add some more lessons
-- Due assignments/projects/etc. block
 - revamp lesson terminology
-- Chrome on pc, lesson has has a slightly different header (I suspect bigger font)
+- Not sure whether I can live with the difference in header in the subpages -> Can't.
+- ?Chrome on pc, lesson has has a slightly different header (I suspect bigger font)
 
 
 Ponder
 - Extract option
 
 
-Prompt -> Βάλε μάθημα
+Prompt -> Βάλε μάθημα και ημερομηνία (YYYY-MM-DD)
 
 
-Σου επισυνάπτω τις σημειώσεις μου από το μάθημα "Υπολογιστική Νοημοσύνη – Βαθιά Ενισχυτική Μάθηση". 
+Σου επισυνάπτω τις σημειώσεις μου από το μάθημα "Μηχανική Μάθηση". 
 
 Σε παρακαλώ, μετάτρεψέ τες σε ένα οργανωμένο αρχείο Markdown (.md). 
 Λειτούργησε ως έμπειρος βοηθός καθηγητή (TA): 
@@ -27,7 +26,7 @@ Prompt -> Βάλε μάθημα
 ---
 title: "[Ένας σχετικός τίτλος για το σημερινό μάθημα]"
 lesson: "[Όνομα μαθήματος, π.χ. Αναγνώριση Προτύπων και Στατιστική Μάθηση]"
-date: "2026-02-17" 
+date: "2026-03-11" 
 tags: ["tag1", "tag2", "tag3", ...]
 ---
 
