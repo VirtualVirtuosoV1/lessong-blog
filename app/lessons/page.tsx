@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "../page.module.css"; // reuse the homepage styles
+import styles from "./lessons.module.css";
 import { getAllPosts } from "@/posts";
 import LessonsClient from "./LessonsClient";
 

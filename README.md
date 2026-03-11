@@ -1,6 +1,8 @@
 To-do
 - Add some more lessons
 - Due assignments/projects/etc. block
+- revamp lesson terminology
+- Chrome on pc, lesson has has a slightly different header (I suspect bigger font)
 
 
 Ponder

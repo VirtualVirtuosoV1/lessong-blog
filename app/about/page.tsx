@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "../page.module.css"; // reuse the homepage styles
+import styles from "../static-page.module.css";
 
 export default function BlogsPage() {
 

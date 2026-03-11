@@ -1,3 +1,117 @@
+.main {
+  min-height: 100vh;
+  background: #21262d;
+  color: #ecf2f8;
+}
+
+.wrapper {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 2.5rem 1rem;
+}
+
+.header {
+  margin-bottom: 2.5rem;
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.nav a {
+  text-underline-offset: 4px;
+}
+
+.nav a:hover {
+  opacity: 0.8;
+}
+
+.title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.introText {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  white-space: pre-line;
+  margin-bottom: 0.75rem;
+}
+
+.sectionTitle {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.postList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.postItem {
+  margin-bottom: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  background: #161b22;
+}
+
+.postLink {
+  font-size: 0.95rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.cardTagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0;
+  max-height: 4.2rem;
+  overflow: hidden;
+}
+
+.cardTag {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  max-width: 100%;
+  padding: 0.32rem 0.72rem;
+  border-radius: 999px;
+  background: #0b0f14;
+  border: 1px solid #2c3848;
+  color: #46e6e6;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.76rem;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cardTag:hover {
+  border-color: #46e6e6;
+}
+
+.cardTag:focus-visible {
+  outline: 2px solid #46e6e6;
+  outline-offset: 2px;
+}
+
+.postMeta {
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  color: #a2d2fb;
+}
+
 .filterWrap {
   margin-bottom: 1.5rem;
 }

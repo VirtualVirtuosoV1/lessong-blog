@@ -3,10 +3,18 @@
 import Link from "next/link";
 import { useId, useState } from "react";
 import { formatPostDate } from "@/formatPostDate";
-import sharedStyles from "../page.module.css";
 import styles from "./lessons.module.css";
 
 const MAX_VISIBLE_FILTER_TAGS = 50;
+const COMBINING_MARKS_REGEX = /[\u0300-\u036f]/g;
+
+function normalizeSearchText(value: string): string {
+  return value
+    .toLocaleLowerCase()
+    .normalize("NFD")
+    .replace(COMBINING_MARKS_REGEX, "")
+    .trim();
+}
 
 type LessonPost = {
   slug: string;
@@ -34,7 +42,7 @@ export default function LessonsClient({
   const [tagQuery, setTagQuery] = useState("");
   const pickerId = useId();
 
-  const normalizedQuery = tagQuery.trim().toLowerCase();
+  const normalizedQuery = normalizeSearchText(tagQuery);
 
   const lessonFilteredPosts = posts.filter((post) => {
     if (selectedLesson.length === 0) {
@@ -64,7 +72,7 @@ export default function LessonsClient({
       return true;
     }
 
-    return tag.toLowerCase().includes(normalizedQuery);
+    return normalizeSearchText(tag).includes(normalizedQuery);
   });
   const visibleMatchingTags = matchingTags.slice(0, MAX_VISIBLE_FILTER_TAGS);
 
@@ -102,7 +110,7 @@ export default function LessonsClient({
           {selectedLesson ? (
             <button
               type="button"
-              className={`${sharedStyles.cardTag} ${styles.selectedLesson}`}
+              className={`${styles.cardTag} ${styles.selectedLesson}`}
               onClick={() => setSelectedLesson("")}
             >
               <span>{selectedLesson}</span>
@@ -114,7 +122,7 @@ export default function LessonsClient({
             <button
               key={tag}
               type="button"
-              className={`${sharedStyles.cardTag} ${styles.selectedTag}`}
+              className={`${styles.cardTag} ${styles.selectedTag}`}
               onClick={() => toggleTag(tag)}
             >
               <span>{tag}</span>
@@ -133,7 +141,7 @@ export default function LessonsClient({
                     <li key={lesson}>
                       <button
                         type="button"
-                        className={`${sharedStyles.cardTag} ${
+                        className={`${styles.cardTag} ${
                           selectedLesson === lesson ? styles.selectedLesson : ""
                         }`}
                         onClick={() =>
@@ -167,7 +175,7 @@ export default function LessonsClient({
                     <li key={tag}>
                       <button
                         type="button"
-                        className={sharedStyles.cardTag}
+                        className={styles.cardTag}
                         onClick={() => addTag(tag)}
                       >
                         {tag}
@@ -191,32 +199,32 @@ export default function LessonsClient({
         ) : null}
       </div>
 
-      <h2 className={sharedStyles.sectionTitle}>Posts</h2>
+      <h2 className={styles.sectionTitle}>Posts</h2>
 
       {filteredPosts.length > 0 ? (
-        <ul className={sharedStyles.postList}>
+        <ul className={styles.postList}>
           {filteredPosts.map((post) => (
-            <li key={post.slug} className={sharedStyles.postItem}>
-              <Link href={`/posts/${post.slug}`} className={sharedStyles.postLink}>
+            <li key={post.slug} className={styles.postItem}>
+              <Link href={`/posts/${post.slug}`} className={styles.postLink}>
                 {post.title}
               </Link>
 
               {post.lesson || post.lessonCode ? (
                 <p className={styles.lessonMeta}>
-                    {post.lesson ?? post.lessonCode}
+                  {post.lesson ?? post.lessonCode}
                 </p>
               ) : null}
 
               {post.tags.length > 0 ? (
                 <ul
-                  className={`${sharedStyles.cardTagList} ${styles.singleLineCardTagList}`}
+                  className={`${styles.cardTagList} ${styles.singleLineCardTagList}`}
                   aria-label="Post tags"
                 >
                   {post.tags.map((tag) => (
                     <li key={`${post.slug}-${tag}`}>
                       <button
                         type="button"
-                        className={`${sharedStyles.cardTag} ${
+                        className={`${styles.cardTag} ${
                           selectedTags.includes(tag) ? styles.selectedTag : ""
                         }`}
                         onClick={() => toggleTag(tag)}
@@ -228,7 +236,7 @@ export default function LessonsClient({
                 </ul>
               ) : null}
 
-              <div className={sharedStyles.postMeta}>
+              <div className={styles.postMeta}>
                 ~ {formatPostDate(post.date)}
               </div>
             </li>
