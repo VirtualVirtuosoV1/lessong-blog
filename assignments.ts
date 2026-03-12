@@ -36,7 +36,7 @@ const assignments: Assignment[] = [
     id: "crypto-1",
     course: "Θεμελιώσεις Κρυπτογραφίας",
     title: "Πρώτο πρότζεκτ (2μ), όχι καθορισμένη Ημ.Παρ.",
-    dueDate: "2026-03-30",
+    dueDate: "2026-04-10",
   },
 ];
 

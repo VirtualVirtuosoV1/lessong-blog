@@ -10,7 +10,7 @@ const questions: Question[] = [
   },
   {
     id: "note-2",
-    text: "Double-check if feature normalization is expected in the Pattern Recognition assignment report.",
+    text: "The following notes are fake.",
   },
   {
     id: "note-3",
@@ -19,6 +19,10 @@ const questions: Question[] = [
   {
     id: "note-4",
     text: "Prepare one concise question about discount factor choices for the RL project.",
+  },
+  {
+    id: "note-5",
+    text: "Double-check if feature normalization is expected in the Pattern Recognition assignment report.",
   },
 ];
 
