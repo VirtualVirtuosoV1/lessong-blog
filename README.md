@@ -2,6 +2,7 @@ To-do
 - revamp lesson terminology
 - Not sure whether I can live with the difference in header in the subpages -> Can't.
 - ?Chrome on pc, lesson has has a slightly different header (I suspect bigger font)
+- Fix "days left"
 
 
 Ponder
