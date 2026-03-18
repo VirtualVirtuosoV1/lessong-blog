@@ -9,6 +9,10 @@ const questions: Question[] = [
     text: "Check on creating your own vpn.",
   },
   {
+    id: "note-1-2",
+    text: "If it were possible for other users to publish posts in here, there'd have to be some sort of automated moderation system to prevent spam and inappropriate content. LLM API?",
+  },
+  {
     id: "note-2",
     text: "The following notes are fake.",
   },

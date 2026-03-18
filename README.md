@@ -1,18 +1,20 @@
 To-do
 - revamp lesson terminology
-- Not sure whether I can live with the difference in header in the subpages -> Can't.
 - ?Chrome on pc, lesson has has a slightly different header (I suspect bigger font)
 - Fix "days left"
-
+- Have a list of available tags so things like "Machine Learning" and "Machine-Learning" don't happen (there's such a case). Also, that'd potentially increase the tags per post and make the more relevant.
+- add pdfs to assignments
+- Different authors on posts
+- Completed assignments
 
 Ponder
-- Extract option
+- Change the load all/ui/something else, so when pressing 'ctrl p', the pdf/printed pages are actually something study-able.
 
 
 Prompt -> Βάλε μάθημα και ημερομηνία (YYYY-MM-DD)
 
 
-Σου επισυνάπτω τις σημειώσεις μου από το μάθημα "Μηχανική Μάθηση". 
+Σου επισυνάπτω τις σημειώσεις μου από το μάθημα "Βελτιστοποίηση". 
 
 Σε παρακαλώ, μετάτρεψέ τες σε ένα οργανωμένο αρχείο Markdown (.md). 
 Λειτούργησε ως έμπειρος βοηθός καθηγητή (TA): 
