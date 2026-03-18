@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getAllPosts } from "@/posts";
 import { formatPostDate } from "@/formatPostDate";
 import { formatDaysLeft, getDueAssignments } from "@/assignments";
-import { getLatestQuestions } from "@/questions";
+import { getLatestQuestions } from "@/questions_notes";
 
 export default function Home() {
   const posts = getAllPosts().slice(0, 7);
