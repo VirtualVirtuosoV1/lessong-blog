@@ -13,6 +13,10 @@ const questions: Question[] = [
     text: "If it were possible for other users to publish posts in here, there'd have to be some sort of automated moderation system to prevent spam and inappropriate content. LLM API?",
   },
   {
+    id: "note-1-3",
+    text: "Is there a PDF reader where you can highlight/select a section, feed it to a LLM and get an explanation straight away?",
+  },
+  {
     id: "note-2",
     text: "The following notes are fake.",
   },
