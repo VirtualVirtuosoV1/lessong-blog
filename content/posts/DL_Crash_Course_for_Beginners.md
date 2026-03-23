@@ -2,7 +2,7 @@
 title: "Deep Learning Crash Course - Αναλυτικές Σημειώσεις"
 lesson: "freeCodeCamp.org"
 date: "2026-03-09"
-tags: ["Deep Learning", "Machine Learning", "Neural Networks", "AI"]
+tags: ["not checked", "Deep Learning", "Machine Learning", "Neural Networks", "AI"]
 ---
 
 ## Εισαγωγή στο Deep Learning & AI
