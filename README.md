@@ -1,7 +1,7 @@
 To-do
 - revamp lesson terminology
 - ?Chrome on pc, lesson has has a slightly different header (I suspect bigger font)
-- Fix "days left"
+- Fix "days left" (updates with git push)
 - Have a list of available tags so things like "Machine Learning" and "Machine-Learning" don't happen (there's such a case). Also, that'd potentially increase the tags per post and make the more relevant.
 - add pdfs to assignments
 - Different authors on posts

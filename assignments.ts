@@ -8,23 +8,23 @@ export type Assignment = {
 const MILLISECONDS_PER_DAY = 24 * 60 * 60 * 1000;
 
 const assignments: Assignment[] = [
+  // {
+  //   id: "ml-assignment-1",
+  //   course: "Μηχανική Μάθηση",
+  //   title: "First assignment",
+  //   dueDate: "2026-03-30",
+  // },
   {
-    id: "ml-assignment-1",
-    course: "Μηχανική Μάθηση",
-    title: "First assignment",
-    dueDate: "2026-03-30",
-  },
-  {
-    id: "eas-assignment-2",
+    id: "eas-assignment-420",
     course: "Ευφυή Αυτόνομα Συστήματα",
-    title: "Assignment 2",
-    dueDate: "2026-03-17",
+    title: "Assignment 420 (3)",
+    dueDate: "2026-04-21",
   },
   {
-    id: "pattern-recognition-assignment-1",
+    id: "pattern-recognition-assignment-2",
     course: "Αναγνώριση Προτύπων - Στατιστική Μάθηση",
-    title: "k-nn classifier & nearest centroid classifier",
-    dueDate: "2026-03-29",
+    title: "Easy stuff!",
+    dueDate: "2026-04-19",
   },
   {
     id: "reinforcement-learning-assignment-1",
@@ -34,6 +34,18 @@ const assignments: Assignment[] = [
   },
    {
     id: "crypto-1",
+    course: "Θεμελιώσεις Κρυπτογραφίας",
+    title: "Πρώτο πρότζεκτ (2μ), όχι καθορισμένη Ημ.Παρ.",
+    dueDate: "2026-04-10",
+  },
+  {
+    id: "machine learning-assignment-2",
+    course: "Μηχανική Μάθηση",
+    title: "Second assignment",
+    dueDate: "2026-05-01",
+  },
+  {
+    id: "crypto-2",
     course: "Θεμελιώσεις Κρυπτογραφίας",
     title: "Πρώτο πρότζεκτ (2μ), όχι καθορισμένη Ημ.Παρ.",
     dueDate: "2026-04-10",
