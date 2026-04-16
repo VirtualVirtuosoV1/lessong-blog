@@ -17,6 +17,10 @@ const questions: Question[] = [
     text: "Is there a PDF reader where you can highlight/select a section, feed it to a LLM and get an explanation straight away?",
   },
   {
+    id: "note-1-4",
+    text: "Changing dns settings. What are the benifits?",
+  },
+  {
     id: "note-2",
     text: "The following notes are fake.",
   },
